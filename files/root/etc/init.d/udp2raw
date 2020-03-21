@@ -53,7 +53,7 @@ create_config() {
 
 	echo "-c" >> $config_file
 	echo "-l ${listen_addr}:${listen_port}" >> $config_file && _log "info" "listening on: ${listen_addr}:${listen_port}"
-	if [-z "$(echo ${sever_addr} | grep ":")" ]; then
+	if [ -z "$(echo ${sever_addr} | grep ":")" ]; then
 		echo "-r ${server_addr}:${server_port}" >> $config_file
 	else
 		echo "-r [${server_addr}]:${server_port}" >> $config_file
